@@ -12232,3 +12232,13 @@ pre .code {
 .section-lg {
   padding: 100px 0 !important;
 }
+
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
