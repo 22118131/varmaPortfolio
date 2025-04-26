@@ -36,3 +36,30 @@ $('#nav-toggle').click(function(){
     $(this).toggleClass('is-active')
     $('ul.nav').toggleClass('show');
 });
+
+function confirmDownload() {
+    const userConfirmed = confirm("Do you want to download the CV?");
+    if (userConfirmed) {
+      // If user clicks "OK", trigger download
+      const link = document.createElement('a');
+      link.href = 'assets/PCVarmaResume.pdf';
+      link.download = 'PCVarmaResume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } else {
+      // If user clicks "Cancel", do nothing or show a message
+      alert("Download canceled.");
+    }
+  };
+
+    // After form submit show success alert
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // stop normal form submit for a second
+    
+        // Show the alert
+        alert('✅ Your message has been sent successfully!');
+    
+        // Now submit the form
+        this.submit();
+      });

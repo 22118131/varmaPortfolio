@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + Meyawo main styles -->
     <link rel="stylesheet" href="assets/css/meyawo.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -58,13 +59,16 @@
                 <span class="up">HI!</span>
                 <span class="down">I am Purna Chandra Varma</span>
             </h1>
-              
+
             <h1 class="header-subtitle blink" style="font-weight: bold;">
                 WEB DEVELOPER
             </h1>
-            
-            
-            <button class="btn btn-primary">Visit My Works</button>
+
+            <button class="btn btn-primary" onclick="document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });">
+                Visit My Works
+              </button>
+              
+            <!-- <button class="btn btn-primary">Visit My Works</button> -->
         </div>
     </header><!-- end of page header -->
 
@@ -75,8 +79,7 @@
             <!-- about wrapper -->
             <div class="about">
                 <div class="about-img-holder">
-                    <img src="assets/imgs/man.png" class="about-img"
-                        alt="Varma Portfolio">
+                    <img src="assets/imgs/man.png" class="about-img" alt="Varma Portfolio">
                 </div>
                 <div class="about-caption">
                     <p class="section-subtitle">Who Am I ?</p>
@@ -93,13 +96,14 @@
                         optimization and responsive design.
                     </p>
                     <p>
-                         When I’m not coding, you’ll find me exploring tech trends, building side projects, or helping
+                        When I’m not coding, you’ll find me exploring tech trends, building side projects, or helping
                         teammates debug things (because teamwork makes the dream work, right? 😄).
                     </p>
                     <!-- <button class="btn-rounded btn btn-outline-primary mt-4">Download CV</button> -->
-                    <a href="assets/PCVarmaResume.pdf" download class="btn-rounded btn btn-outline-primary mt-4">
+                    <button onclick="confirmDownload()" class="btn-rounded btn btn-outline-primary mt-4">
                         Download CV
-                    </a>
+                    </button>
+
                 </div>
             </div><!-- end of about wrapper -->
         </div><!-- end of container -->
@@ -115,24 +119,20 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/pencil-case.svg"
-                                alt="Varma Portfolio"
-                                class="icon">
-                            <h6 class="title">Adipisicing</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
+                            <img src="assets/imgs/responsive.svg" alt="Varma Portfolio" class="icon">
+                            <h6 class="title">Frontend Developer</h6>
+                            <p class="subtitle">I am a Frontend and UI/UX Developer specializing in building responsive
+                                websites and modern web applications.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3">
                     <div class="service-card">
                         <div class="body">
-                            <img src="assets/imgs/responsive.svg"
-                                alt="Varma Portfolio"
-                                class="icon">
-                            <h6 class="title">Sapiente</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
+                            <img src="assets/imgs/pencil-case.svg" alt="Varma Portfolio" class="icon">
+                            <h6 class="title">My services</h6>
+                            <p class="subtitle">My services include Website Development with HTML, CSS, JavaScript, and
+                                Angular, along with intuitive UI/UX Designing to enhance user experience.</p>
                         </div>
                     </div>
                 </div>
@@ -142,9 +142,8 @@
                             <img src="assets/imgs/toolbox.svg"
                                 alt="Varma Portfolio"
                                 class="icon">
-                            <h6 class="title">Placeat</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
+                            <h6 class="title">mobile applications</h6>
+                            <p class="subtitle">I also design mobile applications, focusing on clean layouts, usability, and performance optimization.</p>
                         </div>
                     </div>
                 </div>
@@ -154,9 +153,8 @@
                             <img src="assets/imgs/analytics.svg"
                                 alt="Varma Portfolio"
                                 class="icon">
-                            <h6 class="title">Iusto</h6>
-                            <p class="subtitle">Labore velit culpa adipisci excepturi consequuntur itaque in nam
-                                molestias dolorem iste quod.</p>
+                            <h6 class="title">functional products</h6>
+                            <p class="subtitle">I aim to deliver visually appealing and highly functional products tailored to client needs.</p>
                         </div>
                     </div>
                 </div>
@@ -212,42 +210,42 @@
 
                 <div class="col-md-4">
                     <a href="#" class="portfolio-card">
-                    <a href="https://www.srinudriving.com/" target="_blank" class="portfolio-card">
-                      <img src="assets/imgs/drivingSite.jpg" class="portfolio-card-img" alt="Project 1">
-                      <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                          <h4>Rented cars and Drivers </h4>
-                          <p class="font-weight-normal">Category: Drivers</p>
-                        </span>
-                      </span>
-                    </a>
+                        <a href="https://www.srinudriving.com/" target="_blank" class="portfolio-card">
+                            <img src="assets/imgs/drivingSite.jpg" class="portfolio-card-img" alt="Project 1">
+                            <span class="portfolio-card-overlay">
+                                <span class="portfolio-card-caption">
+                                    <h4>Rented cars and Drivers </h4>
+                                    <p class="font-weight-normal">Category: Drivers</p>
+                                </span>
+                            </span>
+                        </a>
                 </div>
                 <div class="col-md-4">
                     <a href="#" class="portfolio-card">
-                      <img src="assets/imgs/folio-2.jpg" class="portfolio-card-img" alt="Project 1">
-                      <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                          <h4>Project Title</h4>
-                          <p class="font-weight-normal">Category: Web Design</p>
+                        <img src="assets/imgs/folio-2.jpg" class="portfolio-card-img" alt="Project 1">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Project Title</h4>
+                                <p class="font-weight-normal">Category: Web Design</p>
+                            </span>
                         </span>
-                      </span>
                     </a>
-                  </div>
-                  <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
                     <a href="https://your-live-project-link.com" target="_blank" class="portfolio-card">
-                      <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img" alt="Project Image">
-                      <span class="portfolio-card-overlay">
-                        <span class="portfolio-card-caption">
-                          <h4>Web Designing</h4>
-                          <p class="font-weight-normal">Category: Web Templates</p>
+                        <img src="assets/imgs/folio-1.jpg" class="portfolio-card-img" alt="Project Image">
+                        <span class="portfolio-card-overlay">
+                            <span class="portfolio-card-caption">
+                                <h4>Web Designing</h4>
+                                <p class="font-weight-normal">Category: Web Templates</p>
+                            </span>
                         </span>
-                      </span>
                     </a>
-                  </div>
-                  
+                </div>
+
                 <!-- Repeat similar blocks for other projects -->
-              </div>
-              
+            </div>
+
             <!-- end of row -->
         </div><!-- end of container -->
     </section> <!-- end of portfolio section -->
@@ -255,97 +253,80 @@
     <!-- pricing section -->
     <section class="section" id="pricing">
         <div class="container text-center">
-            <p class="section-subtitle">How Much I Charge ?</p>
-            <h6 class="section-title mb-6">My Pricing</h6>
-            <!-- row -->
-            <div class="pricing-wrapper">
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/scooter.svg"
-                            alt="Varma Portfolio">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Free</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p><i class="ti-close"></i></p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>0.00/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
+          <p class="section-subtitle">How Much I Charge ?</p>
+          <h6 class="section-title mb-6">My Pricing</h6>
+          <!-- row -->
+          <div class="pricing-wrapper">
+            <div class="pricing-card">
+              <div class="pricing-card-header">
+                <img class="pricing-card-icon" src="assets/imgs/scooter.svg" alt="Varma Portfolio">
+              </div>
+              <div class="pricing-card-body">
+                <h6 class="pricing-card-title">Landing Page</h6>
+                <div class="pricing-card-list">
+                  <p>Modern Responsive Design</p>
+                  <p>Fast Loading</p>
+                  <p>SEO Friendly Structure</p>
+                  <p>Basic Contact Form</p>
+                  <p><i class="ti-check"></i> 100% Custom Design</p>
+                  <p><i class="ti-close"></i> Dynamic Features</p>
                 </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/shipped.svg"
-                            alt="Varma Portfolio">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Basic</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p><i class="ti-close"></i></p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>9.99/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
+              </div>
+              <div class="pricing-card-footer">
+                <span>Contact for Price</span>
+              </div>
+              <a href="#contact" class="btn btn-primary mt-3 pricing-card-btn">Get a Quote</a>
+            </div>
+      
+            <div class="pricing-card">
+              <div class="pricing-card-header">
+                <img class="pricing-card-icon" src="assets/imgs/shipped.svg" alt="Varma Portfolio">
+              </div>
+              <div class="pricing-card-body">
+                <h6 class="pricing-card-title">Business Website</h6>
+                <div class="pricing-card-list">
+                  <p>Multi-page Website</p>
+                  <p>CMS Integration (optional)</p>
+                  <p>Contact Forms & Lead Capture</p>
+                  <p>Basic Admin Dashboard</p>
+                  <p><i class="ti-check"></i> Mobile Optimized</p>
+                  <p><i class="ti-check"></i> Basic SEO</p>
                 </div>
-                <div class="pricing-card">
-                    <div class="pricing-card-header">
-                        <img class="pricing-card-icon" src="assets/imgs/startup.svg"
-                            alt="Varma Portfolio">
-                    </div>
-                    <div class="pricing-card-body">
-                        <h6 class="pricing-card-title">Premium</h6>
-                        <div class="pricing-card-list">
-                            <p>accusamus reprehenderit</p>
-                            <p>provident dolorem </p>
-                            <p>quos neque</p>
-                            <p>fugiat quibusdam</p>
-                            <p>accusamus laboriosam</p>
-                            <p>inventore omnis</p>
-                        </div>
-                    </div>
-                    <div class="pricing-card-footer">
-                        <span>$</span>
-                        <span>99.9/Month</span>
-                    </div>
-                    <a href="#" class="btn btn-primary mt-3 pricing-card-btn">Subscribe</a>
+              </div>
+              <div class="pricing-card-footer">
+                <span>Contact for Price</span>
+              </div>
+              <a href="#contact" class="btn btn-primary mt-3 pricing-card-btn">Request Pricing</a>
+            </div>
+      
+            <div class="pricing-card">
+              <div class="pricing-card-header">
+                <img class="pricing-card-icon" src="assets/imgs/startup.svg" alt="Varma Portfolio">
+              </div>
+              <div class="pricing-card-body">
+                <h6 class="pricing-card-title">Web App / UI-UX Design</h6>
+                <div class="pricing-card-list">
+                  <p>Custom Angular/React App</p>
+                  <p>API Integration</p>
+                  <p>Authentication Systems</p>
+                  <p>Professional UI/UX Design</p>
+                  <p><i class="ti-check"></i> Performance Optimization</p>
+                  <p><i class="ti-check"></i> Full Deployment Support</p>
                 </div>
-
-            </div><!-- end of pricing wrapper -->
+              </div>
+              <div class="pricing-card-footer">
+                <span>Contact for Price</span>
+              </div>
+              <a href="#contact" class="btn btn-primary mt-3 pricing-card-btn">Start Your Project</a>
+            </div>
+      
+          </div><!-- end of pricing wrapper -->
         </div> <!-- end of container -->
-    </section><!-- end of pricing section -->
+      </section>
+      
+   <!-- end of pricing section -->
 
-    <!-- section -->
-    <section class="section-sm bg-primary">
-        <!-- container -->
-        <div class="container text-center text-sm-left">
-            <!-- row -->
-            <div class="row align-items-center">
-                <div class="col-sm offset-md-1 mb-4 mb-md-0">
-                    <h6 class="title text-light">Want to work with me?</h6>
-                    <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
-                </div>
-                <div class="col-sm offset-sm-2 offset-md-3">
-                    <button class="btn btn-lg my-font btn-light rounded">Hire Me</button>
-                </div>
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </section> <!-- end of section -->
+    
 
     <!-- testimonial section -->
     <section class="section" id="testmonial">
@@ -358,28 +339,28 @@
                 <div class="col-md-6">
                     <div class="testimonial-card">
                         <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img"
-                                alt="Varma Portfolio">
+                            <img src="assets/imgs/avatar2.jpg" class="testimonial-card-img" alt="Varma Portfolio">
                         </div>
                         <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
+                            <p class="testimonial-card-subtitle">"Working with PCVin for our website design was an amazing experience.
+                                They understood our vision perfectly and brought it to life with a beautiful, modern site.
+                                Their attention to detail and creative ideas truly made a difference.
+                                We highly recommend PCVin for anyone looking to build a standout online presence!".</p>
+                            <h6 class="testimonial-card-title">Srinivasulu</h6>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="testimonial-card">
                         <div class="testimonial-card-img-holder">
-                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img"
-                                alt="Varma Portfolio">
+                            <img src="assets/imgs/avatar3.jpg" class="testimonial-card-img" alt="Varma Portfolio">
                         </div>
                         <div class="testimonial-card-body">
-                            <p class="testimonial-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit. Eaque doloribus autem aperiam earum nostrum omnis blanditiis corporis perspiciatis
-                                adipisci nihil.</p>
-                            <h6 class="testimonial-card-title">Emily Reb</h6>
+                            <p class="testimonial-card-subtitle">"PCVin completely transformed our website into something sleek, fast, and user-friendly.
+                                Their team was professional, responsive, and creative throughout the entire process.
+                                They delivered exactly what we needed, even better than we imagined.
+                                Choosing PCVin was one of the best decisions for our brand!"</p>
+                            <h6 class="testimonial-card-title">Karan sonu</h6>
                         </div>
                     </div>
                 </div>
@@ -396,8 +377,7 @@
             <!-- blog-wrapper -->
             <div class="blog-card">
                 <div class="blog-card-header">
-                    <img src="assets/imgs/img-1.jpg" class="blog-card-img"
-                        alt="Varma Portfolio">
+                    <img src="assets/imgs/img-1.jpg" class="blog-card-img" alt="Varma Portfolio">
                 </div>
                 <div class="blog-card-body">
                     <h5 class="blog-card-title">Consectetur adipisicing elit</h6>
@@ -423,8 +403,7 @@
             <!-- blog-wrapper -->
             <div class="blog-card">
                 <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img"
-                        alt="Varma Portfolio">
+                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Varma Portfolio">
                 </div>
                 <div class="blog-card-body">
                     <h5 class="blog-card-title">Explicabo illo</h6>
@@ -456,33 +435,67 @@
             <p class="section-subtitle">How can you communicate?</p>
             <h6 class="section-title mb-5">Contact Me</h6>
             <!-- contact form -->
-            <form action="" class="contact-form col-md-10 col-lg-8 m-auto">
+            <form action="https://formspree.io/f/xyzwzjno" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
                 <div class="form-row">
                     <div class="form-group col-sm-6">
-                        <input type="text" size="50" class="form-control" placeholder="Your Name" required>
+                        <input type="text" name="name" size="50" class="form-control" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-sm-6">
-                        <input type="email" class="form-control" placeholder="Enter Email" requried>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
                     </div>
                     <div class="form-group col-sm-12">
-                        <textarea name="comment" id="comment" rows="6" class="form-control"
-                            placeholder="Write Something"></textarea>
+                        <textarea name="message" id="comment" rows="6" class="form-control"
+                            placeholder="Write Something" required></textarea>
                     </div>
                     <div class="form-group col-sm-12 mt-3">
                         <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
                     </div>
+
+                    <div class="form-group col-sm-12 mt-3">
+                        <input type="hidden" name="_next" value="https://www.pcvin.com/thankyou.html">
+                    </div>
                 </div>
             </form><!-- end of contact form -->
         </div><!-- end of container -->
-    </section><!-- end of contact section -->
+    </section>
+    
+  <!-- end of contact section -->
+
+  <!-- section -->
+    <!-- Include Font Awesome if not already included -->
+<section class="section-sm bg-primary">
+    <div class="container text-center text-sm-left">
+        <div class="row align-items-center">
+            <div class="col-sm offset-md-1 mb-4 mb-md-0">
+                <h6 class="title text-light">Want to work with me?</h6>
+                <p class="m-0 text-light">Always feel Free to Contact & Hire me</p>
+            </div>
+            <div class="col-sm offset-sm-2 offset-md-3 d-flex gap-3">
+                <!-- Call Button (Phone Icon Only) -->
+                <a href="tel:+919876543210" class="btn btn-lg my-font btn-light rounded-circle d-flex justify-content-center align-items-center" style="width:60px; height:60px;">
+                    <i class="fas fa-phone-alt fa-lg text-primary"></i>
+                </a>
+                &nbsp;
+                &nbsp;
+                <!-- WhatsApp Message Button (Message Icon Only) -->
+                <a href="https://wa.me/919876543210" target="_blank" class="btn btn-lg my-font btn-success rounded-circle d-flex justify-content-center align-items-center" style="width:60px; height:60px;">
+                    <i class="fab fa-whatsapp fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    
+   <!-- end of section -->
 
     <!-- footer -->
     <div class="container">
         <footer class="footer">
             <p class="mb-0">Copyright
                 <script>document.write(new Date().getFullYear())</script> &copy; <a
-                    href="http://www.MrVarma.com">Portfolio</a> Distribution <a
-                    href="http://www.MrVarma.com">www.MrVarma.com</a>
+                    href="http://www.pcvin.com">Portfolio</a>
+                <a href="http://www.pcvin.com">www.pcvin.com</a>
             </p>
             <div class="social-links text-right m-auto ml-sm-auto">
                 <a href="javascript:void(0)" class="link"><i class="ti-facebook"></i></a>
