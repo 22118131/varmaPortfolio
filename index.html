@@ -369,13 +369,11 @@
         </div> <!-- end of container -->
     </section> <!-- end of testimonial section -->
 
-    <!-- blog section -->
-    <section class="section" id="blog">
-        <!-- container -->
+<!-- blog section -->
+    <!-- <section class="section" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Blog</h6>
-            <!-- blog-wrapper -->
             <div class="blog-card">
                 <div class="blog-card-header">
                     <img src="assets/imgs/img-1.jpg" class="blog-card-img" alt="Varma Portfolio">
@@ -399,36 +397,29 @@
 
                         <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
                 </div>
-            </div><!-- end of blog wrapper -->
+            </div>
 
+        </div>
+    </section> -->
+    <section class="section" id="blog">
+        <div class="container text-center">
+            <p class="section-subtitle">Recent Posts?</p>
+            <h6 class="section-title mb-6">Blog</h6>
+    
             <!-- blog-wrapper -->
-            <div class="blog-card">
-                <div class="blog-card-header">
-                    <img src="assets/imgs/img-2.jpg" class="blog-card-img" alt="Varma Portfolio">
-                </div>
-                <div class="blog-card-body">
-                    <h5 class="blog-card-title">Explicabo illo</h6>
+            <div id="blog-wrapper">
+                <!-- Blog posts will load dynamically here -->
+            </div>
 
-                        <p class="blog-card-caption">
-                            <a href="#">By: Admin</a>
-                            <a href="#"><i class="ti-heart text-danger"></i> 456</a>
-                            <a href="#"><i class="ti-comment"></i> 264</a>
-                        </p>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit excepturi laborum enim,
-                            vitae ipsam atque eum, ad iusto consequuntur voluptas, esse doloribus. Perferendis porro
-                            quisquam vitae exercitationem aliquid, minus eos laborum repudiandae, cumque debitis iusto
-                            omnis praesentium? Laborum placeat sit adipisci illum tempore maxime, esse qui quae?
-                            Molestias excepturi corporis similique doloribus. Esse vitae earum architecto nulla non
-                            dolores illum at perspiciatis quod, et deleniti cupiditate reiciendis harum facere, delectus
-                            eum commodi soluta distinctio sit repudiandae possimus sunt. Ipsum, rem.</p>
-
-                        <a href="#" class="blog-card-link">Read more <i class="ti-angle-double-right"></i></a>
-                </div>
-            </div><!-- end of blog wrapper -->
-
-        </div><!-- end of container -->
-    </section><!-- end of blog section -->
+            <div class="mt-4">
+                <a href="https://mahadhyuta5.blogspot.com/" target="_blank" class="btn btn-outline-primary rounded">
+                    View All Blogs
+                </a>
+            </div>
+        </div>
+    </section>    
+ 
+    <!-- end of blog section -->
 
     <!-- contact section -->
     <section class="section" id="contact">
@@ -526,6 +517,43 @@
     <!-- Meyawo js -->
     <script src="assets/js/meyawo.js"></script>
 
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const blogWrapper = document.getElementById('blog-wrapper');
+
+    const script = document.createElement('script');
+    script.src = "https://api.rss2json.com/v1/api.json?rss_url=https://mahadhyuta5.blogspot.com/feeds/posts/default&callback=displayBlogs";
+    document.body.appendChild(script);
+
+    window.displayBlogs = function(data) {
+        const posts = data.items || [];
+        posts.slice(0, 2).forEach(post => {
+            const blogCard = `
+                <div class="col-md-6 mb-4">
+                    <div class="blog-card">
+                        <div class="blog-card-header">
+                            <img src="${post.thumbnail}" class="blog-card-img" alt="Blog Image">
+                        </div>
+                        <div class="blog-card-body">
+                            <h5 class="blog-card-title">${post.title}</h5>
+                            <p class="blog-card-caption">
+                                <a href="#">By: Admin</a> | <span>${new Date(post.pubDate).toDateString()}</span>
+                            </p>
+                            <p>${post.description.substring(0, 150)}...</p>
+                            <a href="${post.link}" target="_blank" class="blog-card-link">
+                                Read more <i class="ti-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            blogWrapper.innerHTML += blogCard;
+        });
+    }
+});
+</script>
+
+        
 </body>
 
 </html>
