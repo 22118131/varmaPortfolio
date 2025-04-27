@@ -64,4 +64,27 @@ function confirmDownload() {
         this.submit();
       });
 
-      
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Stop default submit
+        
+        const formData = new FormData(this);
+    
+        fetch(this.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('✅ Your message has been sent successfully!');
+            this.reset(); // Reset the form
+          } else {
+            alert('❌ Failed to send message. Please try again.');
+          }
+        })
+        .catch(error => {
+          alert('❌ Something went wrong.');
+        });
+      });
