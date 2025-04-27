@@ -401,55 +401,28 @@
 
         </div>
     </section> -->
+      
+ 
+    <!-- end of blog section -->
+
+    <!-- contact section -->
     <section class="section" id="blog">
         <div class="container text-center">
             <p class="section-subtitle">Recent Posts?</p>
             <h6 class="section-title mb-6">Blog</h6>
     
             <!-- blog-wrapper -->
-            <div id="blog-wrapper">
-                <!-- Blog posts will load dynamically here -->
+            <div class="row" id="blog-wrapper">
+                <!-- Blogs will load here dynamically -->
             </div>
-
+    
+            <!-- View All Blogs Button -->
             <div class="mt-4">
-                <a href="https://mahadhyuta5.blogspot.com/" target="_blank" class="btn btn-outline-primary rounded">
-                    View All Blogs
-                </a>
+                <a href="https://mahadhyuta5.blogspot.com/" target="_blank" class="btn btn-primary">View All Blogs</a>
             </div>
         </div>
-    </section>    
- 
-    <!-- end of blog section -->
-
-    <!-- contact section -->
-    <section class="section" id="contact">
-        <div class="container text-center">
-            <p class="section-subtitle">How can you communicate?</p>
-            <h6 class="section-title mb-5">Contact Me</h6>
-            <!-- contact form -->
-            <form action="https://formspree.io/f/xyzwzjno" method="POST" class="contact-form col-md-10 col-lg-8 m-auto">
-                <div class="form-row">
-                    <div class="form-group col-sm-6">
-                        <input type="text" name="name" size="50" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group col-sm-6">
-                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
-                    </div>
-                    <div class="form-group col-sm-12">
-                        <textarea name="message" id="comment" rows="6" class="form-control"
-                            placeholder="Write Something" required></textarea>
-                    </div>
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="submit" value="Send Message" class="btn btn-outline-primary rounded">
-                    </div>
-
-                    <div class="form-group col-sm-12 mt-3">
-                        <input type="hidden" name="_next" value="https://www.pcvin.com/thankyou.html">
-                    </div>
-                </div>
-            </form><!-- end of contact form -->
-        </div><!-- end of container -->
     </section>
+    
     
   <!-- end of contact section -->
 
@@ -518,40 +491,41 @@
     <script src="assets/js/meyawo.js"></script>
 
     <script>
-document.addEventListener('DOMContentLoaded', function() {
-    const blogWrapper = document.getElementById('blog-wrapper');
-
-    const script = document.createElement('script');
-    script.src = "https://api.rss2json.com/v1/api.json?rss_url=https://mahadhyuta5.blogspot.com/feeds/posts/default&callback=displayBlogs";
-    document.body.appendChild(script);
-
-    window.displayBlogs = function(data) {
-        const posts = data.items || [];
-        posts.slice(0, 2).forEach(post => {
-            const blogCard = `
-                <div class="col-md-6 mb-4">
-                    <div class="blog-card">
-                        <div class="blog-card-header">
-                            <img src="${post.thumbnail}" class="blog-card-img" alt="Blog Image">
+        document.addEventListener('DOMContentLoaded', function() {
+            const blogWrapper = document.getElementById('blog-wrapper');
+        
+            const script = document.createElement('script');
+            script.src = "https://api.rss2json.com/v1/api.json?rss_url=https://mahadhyuta5.blogspot.com/feeds/posts/default&callback=displayBlogs";
+            document.body.appendChild(script);
+        
+            window.displayBlogs = function(data) {
+                const posts = data.items || [];
+                posts.slice(0, 2).forEach(post => {
+                    const blogCard = `
+                        <div class="col-md-6 mb-4">
+                            <div class="blog-card h-100">
+                                <div class="blog-card-header">
+                                    <img src="${post.thumbnail}" class="blog-card-img" alt="Blog Image">
+                                </div>
+                                <div class="blog-card-body">
+                                    <h5 class="blog-card-title">${post.title}</h5>
+                                    <p class="blog-card-caption">
+                                        <a href="#">By: Admin</a> | <span>${new Date(post.pubDate).toDateString()}</span>
+                                    </p>
+                                    <p>${post.description.substring(0, 100)}...</p>
+                                    <a href="${post.link}" target="_blank" class="blog-card-link">
+                                        Read more <i class="ti-angle-double-right"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="blog-card-body">
-                            <h5 class="blog-card-title">${post.title}</h5>
-                            <p class="blog-card-caption">
-                                <a href="#">By: Admin</a> | <span>${new Date(post.pubDate).toDateString()}</span>
-                            </p>
-                            <p>${post.description.substring(0, 150)}...</p>
-                            <a href="${post.link}" target="_blank" class="blog-card-link">
-                                Read more <i class="ti-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            `;
-            blogWrapper.innerHTML += blogCard;
+                    `;
+                    blogWrapper.innerHTML += blogCard;
+                });
+            }
         });
-    }
-});
-</script>
+        </script>
+        
 
         
 </body>
